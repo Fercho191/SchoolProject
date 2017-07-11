@@ -1,0 +1,23 @@
+<h2>{{sc.title}}</h2>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Created</th>
+			<th>Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in sc.schools">
+			<td>{{item.id}}</td>
+			<td>{{item.name}}</td>
+			<td>{{item.created}}</td>
+			<td>
+				<button class="btn btn-primary" ng-click="sc.getItem(item.id)">Ver</button>
+				<button class="btn btn-warning" >Editar</button>
+				<button class="btn btn-danger" ng-click="sc.deleteItem(item.id)">Eliminar</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
