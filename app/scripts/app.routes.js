@@ -10,9 +10,7 @@
  */
 angular
   .module('schoolProjectApp')
-  .config(function ($stateProvider, $urlRouterProvider) {
-
-  	$urlRouterProvider.otherwise('/schools');
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
   	$stateProvider
   		.state('schools', {

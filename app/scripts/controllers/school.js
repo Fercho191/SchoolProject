@@ -18,6 +18,7 @@ angular.module('schoolProjectApp')
     sc.getItem = getItem;
     sc.getAll = getAll;
     sc.deleteItem = deleteItem;
+    sc.updateItem = updateItem;
 
     function $onInit() {
     	sc.getAll()
@@ -35,10 +36,13 @@ angular.module('schoolProjectApp')
     }
     
     function getItem(id) {
-    	schoolService.getOne(id)
-    		.then(function(response) {
-    			console.log(response);
-    		});
+      modalService.openModal('views/schoolview.html','ViewschoolCtrl','msc', id)
+        .then(function(response) {
+          console.log(response)
+        })
+        .catch(function(err) {
+          console.log(err)
+        })
     }
 
     function deleteItem(id) {
@@ -54,6 +58,16 @@ angular.module('schoolProjectApp')
         .then(function(response) {
           sc.schools = response.results;
         });
+    }
+
+    function updateItem(id) {
+      modalService.openModal('views/schoolform.html','UpdateschoolCtrl','msc', id)
+        .then(function(response) {
+          sc.getAll()
+        })
+        .catch(function(err) {
+          console.log(err)
+        })
     }
 
   });

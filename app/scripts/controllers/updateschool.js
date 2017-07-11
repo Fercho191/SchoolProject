@@ -2,22 +2,32 @@
 
 /**
  * @ngdoc function
- * @name schoolProjectApp.controller:CreateschoolCtrl
+ * @name schoolProjectApp.controller:UpdateschoolCtrl
  * @description
- * # CreateschoolCtrl
+ * # UpdateschoolCtrl
  * Controller of the schoolProjectApp
  */
 angular.module('schoolProjectApp')
-  .controller('CreateschoolCtrl', function ($uibModalInstance, schoolService, Item) {
-  	var msc = this;
-  	msc.title = 'New School'
+  .controller('UpdateschoolCtrl', function ($uibModalInstance, schoolService, Item) {
+    var msc = this;
+  	msc.title = 'Update School'
   	msc.data = {}
 
+  	msc.$onInit = $onInit;
   	msc.ok = ok;
   	msc.cancel = cancel;
 
+  	function $onInit() {
+  		schoolService.getOne(Item)
+    		.then(function(response) {
+    			msc.data = response;
+    		});
+  	}
+
   	function ok() {
-  		schoolService.create(msc.data)
+  		schoolService.update(Item, {
+  				name: msc.data.name
+  			})
   			.then(function(response) {
   				$uibModalInstance.close(response);
   			})

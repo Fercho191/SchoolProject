@@ -34,6 +34,15 @@ angular.module('schoolProjectApp')
             return err;
           });
       },
+      update: function(id, data) {
+        return $http.put(resourceUrl + id + '/', data)
+          .then(function(response) {
+            return response;
+          })
+          .catch(function(err) {
+            return err
+          })
+      },
       delete: function(id) {
         return $http.delete(resourceUrl + id)
           .then(function(response) {

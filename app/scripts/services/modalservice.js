@@ -15,7 +15,7 @@ angular.module('schoolProjectApp')
     var meaningOfLife = 42;
 
     return {
-      openModal: function (templateUrl, controller, controllerAs) {
+      openModal: function (templateUrl, controller, controllerAs, resolve = 0) {
         var modalInstance = $uibModal.open({
           animation: true,
           ariaLabelledBy: 'modal-title',
@@ -23,15 +23,20 @@ angular.module('schoolProjectApp')
           templateUrl: templateUrl,
           controller: controller,
           controllerAs: controllerAs,
-          size: 'sm'
+          size: 'sm',
+          resolve: {
+            Item : function() {
+              return resolve
+            }
+          }
         })
 
         return modalInstance.result
           .then(function(response) {
             return response
           })
-          .catch(function() {
-            return ('Modal dismissed at: ' + new Date())
+          .catch(function(err) {
+            return (err)
           })
       }
     };
