@@ -10,11 +10,8 @@
 angular.module('schoolProjectApp')
   .factory('schoolService', function ($http, APIDATA) {
     // Service logic
-    // ...
-
     var resourceUrl = APIDATA.HOST + '/api/schools/';
 
-    // Public API here
     return {
       getAll: function () {
         return $http.get(resourceUrl)
@@ -28,15 +25,15 @@ angular.module('schoolProjectApp')
             return response.data;
           });
       },
-      new: function(data) {
+      create: function(data) {
         return $http.post(resourceUrl, data)
           .then(function (response) {
-            return response
+            return response;
           })
           .catch(function(err) {
-            return err
-          })
-      }
+            return err;
+          });
+      },
       delete: function(id) {
         return $http.delete(resourceUrl + id)
           .then(function(response) {

@@ -8,7 +8,7 @@
  * Controller of the schoolProjectApp
  */
 angular.module('schoolProjectApp')
-  .controller('SchoolCtrl', function (schoolService) {
+  .controller('SchoolCtrl', function (schoolService, $uibModal, modalService) {
     var sc = this;
     sc.title = 'Schools';
     sc.schools = [];
@@ -16,17 +16,22 @@ angular.module('schoolProjectApp')
     sc.$onInit = $onInit;
     sc.newItem = newItem;
     sc.getItem = getItem;
+    sc.getAll = getAll;
     sc.deleteItem = deleteItem;
 
     function $onInit() {
-    	schoolService.getAll()
-    		.then(function(response) {
-    			sc.schools = response.results;
-    		});
+    	sc.getAll()
     }
 
     function newItem() {
-        
+      modalService.openModal('views/schoolform.html','CreateschoolCtrl','msc')
+        .then(function(response) {
+          console.log(response)
+          sc.getAll()
+        })
+        .catch(function(err) {
+          console.log(err)
+        })
     }
     
     function getItem(id) {
@@ -40,7 +45,15 @@ angular.module('schoolProjectApp')
     	schoolService.delete(id)
     		.then(function(response) {
     			console.log(response);
+          sc.getAll()
     		});
+    }
+
+    function getAll() {
+      schoolService.getAll()
+        .then(function(response) {
+          sc.schools = response.results;
+        });
     }
 
   });
