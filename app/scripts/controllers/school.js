@@ -14,6 +14,7 @@ angular.module('schoolProjectApp')
     sc.schools = [];
 
     sc.$onInit = $onInit;
+    sc.newItem = newItem;
     sc.getItem = getItem;
     sc.deleteItem = deleteItem;
 
@@ -24,6 +25,10 @@ angular.module('schoolProjectApp')
     		});
     }
 
+    function newItem() {
+        
+    }
+    
     function getItem(id) {
     	schoolService.getOne(id)
     		.then(function(response) {

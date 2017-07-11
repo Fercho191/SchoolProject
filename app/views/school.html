@@ -1,4 +1,5 @@
 <h2>{{sc.title}}</h2>
+<button type="button" class="btn btn-success btn-lg" ng-click="sc.newItem()">New School</button>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -14,9 +15,9 @@
 			<td>{{item.name}}</td>
 			<td>{{item.created}}</td>
 			<td>
-				<button class="btn btn-primary" ng-click="sc.getItem(item.id)">Ver</button>
+				<button class="btn btn-primary" ng-click="sc.getItem(item.id)">Show</button>
 				<button class="btn btn-warning" >Editar</button>
-				<button class="btn btn-danger" ng-click="sc.deleteItem(item.id)">Eliminar</button>
+				<button class="btn btn-danger" ng-click="sc.deleteItem(item.id)">Delete</button>
 			</td>
 		</tr>
 	</tbody>
