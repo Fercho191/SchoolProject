@@ -1,0 +1,24 @@
+<h2>{{ac.title}}</h2>
+<button type="button" class="btn btn-success" ng-click="ac.newItem()">New Activity</button>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Student</th>
+			<th>Activity</th>
+			<th>Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in ac.assignments">
+			<td>{{item.id}}</td>
+			<td>{{item.studentData.name}}</td>
+			<td>{{item.activityData.name}}</td>
+			<td>
+				<button class="btn btn-primary" ng-click="ac.getItem(item.id)">Show</button>
+				<button class="btn btn-warning" ng-click="ac.updateItem(item.id)">Update</button>
+				<button class="btn btn-danger" ng-click="ac.deleteItem(item.id)">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>

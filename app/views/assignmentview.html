@@ -1,0 +1,13 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{msc.title}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+  <div class="form-group">
+    <label for="name">Student</label> : {{msc.data.studentData.name}}
+    <br>
+    <label for="name">Activity</label> : {{msc.data.activityData.name}}
+  </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="msc.ok()">OK</button>
+</div>

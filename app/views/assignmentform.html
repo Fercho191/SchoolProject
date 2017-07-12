@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">{{msc.title}}</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form>
+      <div class="form-group">
+      	<label for="students">Student</label>
+		    <select class="form-control" id="students" ng-model="msc.data.student">
+		      <option ng-repeat="option in msc.students" value="{{option.id}}">{{option.name}}</option>
+		    </select>
+      </div>
+      <div class="form-group">
+      	<label for="activities">Activity</label>
+		    <select class="form-control" id="activities" ng-model="msc.data.activity">
+		      <option ng-repeat="option in msc.activities" value="{{option.id}}">{{option.name}}</option>
+		    </select>
+      </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="msc.ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="msc.cancel()">Cancel</button>
+</div>
