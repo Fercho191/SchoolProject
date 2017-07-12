@@ -15,14 +15,20 @@ angular
   	$stateProvider
       .state('schools', {
         url: '/schools',
-        templateUrl: 'views/school.html',
+        templateUrl: 'views/schools.html',
         controller: 'SchoolCtrl',
         controllerAs: 'sc'
       })
-  		.state('students', {
-  			url: '/students',
-  			templateUrl: 'views/students.html',
-  			controller: 'StudentCtrl',
-  			controllerAs: 'sc'
+      .state('students', {
+        url: '/students',
+        templateUrl: 'views/students.html',
+        controller: 'StudentCtrl',
+        controllerAs: 'sc'
+      })
+  		.state('activities', {
+  			url: '/activities',
+  			templateUrl: 'views/activities.html',
+  			controller: 'ActivityCtrl',
+  			controllerAs: 'ac'
   		});
   });
