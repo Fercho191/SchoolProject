@@ -2,15 +2,15 @@
 
 /**
  * @ngdoc function
- * @name schoolProjectApp.controller:UpdateactivityCtrl
+ * @name schoolProjectApp.controller:StudentUpdateCtrl
  * @description
- * # UpdateactivityCtrl
+ * # StudentUpdateCtrl
  * Controller of the schoolProjectApp
  */
 angular.module('schoolProjectApp')
-  .controller('UpdateactivityCtrl', function ($uibModalInstance, activityservice, schoolService, Item) {
+  .controller('StudentUpdateCtrl', function ($uibModalInstance, studentservice, schoolService, Item) {
     var msc = this;
-    msc.title = 'Update Activity'
+    msc.title = 'Update Student'
     msc.data = {}
 
     msc.$onInit = $onInit;
@@ -19,7 +19,7 @@ angular.module('schoolProjectApp')
 
     function $onInit() {
       getSchools()
-      activityservice.getOne(Item)
+      studentservice.getOne(Item)
         .then(function(response) {
           msc.data = response;
           msc.data.school = msc.data.school.toString();
@@ -34,7 +34,7 @@ angular.module('schoolProjectApp')
     }
 
     function ok() {
-      activityservice.update(Item, {
+      studentservice.update(Item, {
           name: msc.data.name,
           school: msc.data.school
         })

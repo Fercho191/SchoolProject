@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name schoolProjectApp.controller:UpdateschoolCtrl
+ * @name schoolProjectApp.controller:SchoolUpdateCtrl
  * @description
- * # UpdateschoolCtrl
+ * # SchoolUpdateCtrl
  * Controller of the schoolProjectApp
  */
 angular.module('schoolProjectApp')
-  .controller('UpdateschoolCtrl', function ($uibModalInstance, schoolService, Item) {
+  .controller('SchoolUpdateCtrl', function ($uibModalInstance, schoolService, Item) {
     var msc = this;
   	msc.title = 'Update School'
   	msc.data = {}

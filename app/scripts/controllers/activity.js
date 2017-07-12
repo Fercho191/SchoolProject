@@ -25,7 +25,7 @@ angular.module('schoolProjectApp')
     }
 
     function newItem() {
-      modalService.openModal('views/activityform.html','CreateactivityCtrl','msc')
+      modalService.openModal('views/activityform.html','ActivityCreateCtrl','msc')
         .then(function(response) {
           console.log(response)
           ac.getAll()
@@ -36,7 +36,7 @@ angular.module('schoolProjectApp')
     }
     
     function getItem(id) {
-      modalService.openModal('views/activityview.html','ViewactivityCtrl','msc', id)
+      modalService.openModal('views/activityview.html','ActivityViewCtrl','msc', id)
         .then(function(response) {
           console.log(response)
         })
@@ -61,7 +61,7 @@ angular.module('schoolProjectApp')
     }
 
     function updateItem(id) {
-      modalService.openModal('views/activityform.html','UpdateactivityCtrl','msc', id)
+      modalService.openModal('views/activityform.html','ActivityUpdateCtrl','msc', id)
         .then(function(response) {
           ac.getAll()
         })

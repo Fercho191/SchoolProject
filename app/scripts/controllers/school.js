@@ -25,7 +25,7 @@ angular.module('schoolProjectApp')
     }
 
     function newItem() {
-      modalService.openModal('views/schoolform.html','CreateschoolCtrl','msc')
+      modalService.openModal('views/schoolform.html','SchoolCreateCtrl','msc')
         .then(function(response) {
           console.log(response)
           sc.getAll()
@@ -36,7 +36,7 @@ angular.module('schoolProjectApp')
     }
     
     function getItem(id) {
-      modalService.openModal('views/schoolview.html','ViewschoolCtrl','msc', id)
+      modalService.openModal('views/schoolview.html','SchoolViewCtrl','msc', id)
         .then(function(response) {
           console.log(response)
         })
@@ -61,7 +61,7 @@ angular.module('schoolProjectApp')
     }
 
     function updateItem(id) {
-      modalService.openModal('views/schoolform.html','UpdateschoolCtrl','msc', id)
+      modalService.openModal('views/schoolform.html','SchoolUpdateCtrl','msc', id)
         .then(function(response) {
           sc.getAll()
         })

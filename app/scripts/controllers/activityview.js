@@ -2,22 +2,22 @@
 
 /**
  * @ngdoc function
- * @name schoolProjectApp.controller:ViewstudentCtrl
+ * @name schoolProjectApp.controller:ActivityViewCtrl
  * @description
- * # ViewstudentCtrl
+ * # ActivityViewCtrl
  * Controller of the schoolProjectApp
  */
 angular.module('schoolProjectApp')
-  .controller('ViewstudentCtrl', function ($uibModalInstance, studentservice, schoolService, Item) {
+  .controller('ActivityViewCtrl', function ($uibModalInstance, activityservice, schoolService, Item) {
     var msc = this;
-  	msc.title = 'Student'
+  	msc.title = 'Activity'
   	msc.data = {}
 
   	msc.$onInit = $onInit;
   	msc.ok = ok;
 
   	function $onInit() {
-  		studentservice.getOne(Item)
+  		activityservice.getOne(Item)
     		.then(function(response) {
     			msc.data = response;
     			schoolService.getOne(msc.data.school)

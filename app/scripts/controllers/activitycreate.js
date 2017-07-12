@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name schoolProjectApp.controller:CreateactivityCtrl
+ * @name schoolProjectApp.controller:ActivityCreateCtrl
  * @description
- * # CreateactivityCtrl
+ * # ActivityCreateCtrl
  * Controller of the schoolProjectApp
  */
 angular.module('schoolProjectApp')
-  .controller('CreateactivityCtrl', function ($uibModalInstance, activityservice, schoolService, Item) {
+  .controller('ActivityCreateCtrl', function ($uibModalInstance, activityservice, schoolService, Item) {
   	var msc = this;
   	msc.title = 'New Activity'
   	msc.data = {}
