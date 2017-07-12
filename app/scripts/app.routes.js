@@ -12,6 +12,7 @@ angular
   .module('schoolProjectApp')
   .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
+    $urlRouterProvider.otherwise('/schools')
   	$stateProvider
       .state('schools', {
         url: '/schools',
@@ -25,10 +26,16 @@ angular
         controller: 'StudentCtrl',
         controllerAs: 'sc'
       })
-  		.state('activities', {
-  			url: '/activities',
-  			templateUrl: 'views/activities.html',
-  			controller: 'ActivityCtrl',
+      .state('activities', {
+        url: '/activities',
+        templateUrl: 'views/activities.html',
+        controller: 'ActivityCtrl',
+        controllerAs: 'ac'
+      })
+  		.state('assignments', {
+  			url: '/assignments',
+  			templateUrl: 'views/assignments.html',
+  			controller: 'AssignmentCtrl',
   			controllerAs: 'ac'
   		});
   });
