@@ -13,7 +13,7 @@
 		<tr ng-repeat="item in ac.activities">
 			<td>{{item.id}}</td>
 			<td>{{item.name}}</td>
-			<td>{{item.created}}</td>
+			<td>{{item.created | date : 'dd MMMM, yyyy' }}</td>
 			<td>
 				<button class="btn btn-primary" ng-click="ac.getItem(item.id)">Show</button>
 				<button class="btn btn-warning" ng-click="ac.updateItem(item.id)">Update</button>

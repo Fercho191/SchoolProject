@@ -15,7 +15,10 @@ angular.module('schoolProjectApp')
     var meaningOfLife = 42;
 
     return {
-      openModal: function (templateUrl, controller, controllerAs, resolve = 0) {
+      openModal: function (templateUrl, controller, controllerAs, resolve) {
+        if (!resolve) {
+          resolve = 0
+        }
         var modalInstance = $uibModal.open({
           animation: true,
           ariaLabelledBy: 'modal-title',

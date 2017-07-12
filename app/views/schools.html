@@ -13,7 +13,7 @@
 		<tr ng-repeat="item in sc.schools">
 			<td>{{item.id}}</td>
 			<td>{{item.name}}</td>
-			<td>{{item.created}}</td>
+			<td>{{item.created | date : 'dd MMMM, yyyy'}}</td>
 			<td>
 				<button class="btn btn-primary" ng-click="sc.getItem(item.id)">Show</button>
 				<button class="btn btn-warning" ng-click="sc.updateItem(item.id)">Update</button>
